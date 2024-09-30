@@ -28,6 +28,8 @@ public class BoardService {
                 .writer(boardCreate.getWriter())
                 .build();
 
+        System.out.println("git commit test");
+
         boardRepository.save(board);
     }
 
