@@ -1,8 +1,7 @@
 package com.example.springboard.api.repository;
 
 import com.example.springboard.api.domain.Board;
-import com.example.springboard.api.domain.QBoard;
-import com.example.springboard.api.response.BoardSearch;
+import com.example.springboard.api.request.BoardSearch;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 

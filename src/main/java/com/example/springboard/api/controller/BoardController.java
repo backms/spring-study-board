@@ -2,8 +2,8 @@ package com.example.springboard.api.controller;
 
 import com.example.springboard.api.request.BoardCreate;
 import com.example.springboard.api.request.BoardEdit;
+import com.example.springboard.api.request.BoardSearch;
 import com.example.springboard.api.response.BoardResponse;
-import com.example.springboard.api.response.BoardSearch;
 import com.example.springboard.api.service.BoardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

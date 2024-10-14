@@ -1,4 +1,4 @@
-package com.example.springboard.api.response;
+package com.example.springboard.api.request;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Getter;
 @Builder
 public class BoardSearch {
 
-    private static final int MAX_SIZE = 2000;
+    private static final int MAX_SIZ = 2000;
 
     @Builder.Default
     private Integer page = 1;
@@ -16,7 +16,7 @@ public class BoardSearch {
     private Integer size = 10;
 
     public long getOffset() {
-        return (long) (Math.max(1,page) * Math.min(size,MAX_SIZE));
+        return (long) (Math.max(1, page) - 1) * Math.min(size, MAX_SIZ);
     }
 
 }

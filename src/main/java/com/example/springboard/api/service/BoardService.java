@@ -6,11 +6,12 @@ import com.example.springboard.api.exception.BoardNotFound;
 import com.example.springboard.api.repository.BoardRepository;
 import com.example.springboard.api.request.BoardCreate;
 import com.example.springboard.api.request.BoardEdit;
+import com.example.springboard.api.request.BoardSearch;
 import com.example.springboard.api.response.BoardResponse;
-import com.example.springboard.api.response.BoardSearch;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,7 +51,8 @@ public class BoardService {
                 .collect(Collectors.toList());
     }
 
-    public BoardResponse edit(long boardId, @Valid BoardEdit boardEdit) {
+    @Transactional
+    public BoardResponse edit(long boardId, BoardEdit boardEdit) {
 
         Board board = boardRepository.findById(boardId)
                 .orElseThrow(BoardNotFound::new);
