@@ -29,11 +29,12 @@ public class Board {
         this.writer = writer;
     }
 
-    public BoardEditor.BoardEditorBuilder toEditor() {
+    public BoardEditor toEditor() {
         return BoardEditor.builder()
                 .title(title)
                 .content(content)
-                .writer(writer);
+                .writer(writer)
+                .build();
     }
 
     public void edit(BoardEditor boardEditor) {

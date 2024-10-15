@@ -57,12 +57,11 @@ public class BoardService {
         Board board = boardRepository.findById(boardId)
                 .orElseThrow(BoardNotFound::new);
 
-        BoardEditor.BoardEditorBuilder editorBuilder = board.toEditor();
-
-        BoardEditor boardEditor = editorBuilder.title(boardEdit.getTitle())
-                                                .content(boardEdit.getContent())
-                                                .writer(boardEdit.getWriter())
-                                                .build();
+        BoardEditor boardEditor = BoardEditor.builder()
+                .title(boardEdit.getTitle())
+                .content(boardEdit.getContent())
+                .writer(boardEdit.getWriter())
+                .build();
 
         board.edit(boardEditor);
 
