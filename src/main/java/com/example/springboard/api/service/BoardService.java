@@ -29,8 +29,6 @@ public class BoardService {
                 .writer(boardCreate.getWriter())
                 .build();
 
-        System.out.println("git commit test2");
-
         boardRepository.save(board);
     }
 

@@ -32,7 +32,7 @@ public class BoardController {
         return boardService.getList(boardSearch);
     }
 
-    @PatchMapping("/board/{boardId}")
+    @PutMapping("/board/{boardId}")
     public BoardResponse edit(@PathVariable long boardId, @RequestBody @Valid BoardEdit boardEdit){
         return boardService.edit(boardId, boardEdit);
     }
